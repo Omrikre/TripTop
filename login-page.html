@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login page | TripTop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+
+  <div style="text-align: -webkit-center;">
+    <h1>Welcome to TripTop</h1>
+
+  </div>
+
+  <form id="login-form" style="text-align: center; margin-top:60px;">
+    <h2>Login to use the TripTop planner</h2>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+    <label for="Password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+
+
+    <button style="margin-top: 10px;"  type="submit" >Login</button>
+
+    <p>&copy; 2023 TripTop team. All rights reserved.</p>
+
+    <p id="error-message" style="display: none; color: red;">Invalid email or password.</p>
+
+
+  </form>
+
+
+
+  <script src="login-script.js"></script>
+</body>
+</html>

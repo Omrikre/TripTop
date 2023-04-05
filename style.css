@@ -18,24 +18,24 @@ body {
 	animation: travel 60s linear infinite;
   }
   
-  h1 {
+  .site-header {
 	margin-block-start: 15px;
 	text-align: center;
 	font-size: 48px;
 	font-weight: bold;
 	color: #fff;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-	background-color: #4c61af;
-	padding: 16px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	background-color: #354F52;
+	padding: 14px;
 	text-transform: uppercase;
 	letter-spacing: 4px;
+	margin: 0;
   }
   
   
   
   form {
-	max-width: 520px;
+	max-width: 650px;
 	margin: auto;
 	padding: 20px;
 	background-color: rgba(255, 255, 255, 0.8);
@@ -71,14 +71,16 @@ body {
   .about-us-paragraph {
 	margin: auto;
 	max-width: 1000px;
-	background-color: #fff;
+	background-color: #332f2f6a;
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	font-size: 1.2em;
+	font-size: x-large;
 	line-height: 1.5;
 	text-align: justify;
 	align-content: center;
+	text-align: -webkit-center;
+	color: white;
   }
   
   input[type="text"],
@@ -97,9 +99,8 @@ body {
 	display: block;
 	margin: auto;
 	padding: 12px 30px;
-	background-color: #4c61af;
+	background-color: #354F52;
 	color: #fff;
-	border: none;
 	border-radius: 5px;
 	cursor: pointer;
   }
@@ -107,11 +108,11 @@ body {
 
   #about-us-button, #home-page-button {
 	background-color: white;
-	border: 2px solid #fff; /* or any other border color you prefer */
 	color: black; /* or any other text color you prefer */
-	padding: 5px 10px;
+	padding: 5px 20px;
 	border-radius: 5px;
 	font-size: 16px;
+	margin-top: 5px;
   }
   
   #results {
@@ -127,4 +128,274 @@ body {
   #results h2 {
 	margin-top: 0;
   }
+
+  .container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 20px;
+  }
   
+  .header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #ffffff;
+	padding: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h1 {
+	margin: 0;
+  }
+
+  main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 2rem;
+  }
+  
+  .trip-card {
+	background-color: #f2f2f2;
+	border-radius: 30px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	margin: 1rem;
+	overflow: hidden;
+	width: 300px;
+  }
+  
+  .trip-card img {
+	display: block;
+	height: 200px;
+	object-fit: cover;
+	width: 100%;
+  }
+  
+  .trip-card h2 {
+	font-size: 1.5rem;
+	margin: 1rem;
+	text-align: center;
+  }
+  
+  .trip-card p {
+	font-size: 1rem;
+	margin: 0 1rem 1rem 1rem;
+	text-align: center;
+  }
+  
+  .header nav {
+	display: flex;
+  }
+  
+  .header nav a {
+	display: block;
+	padding: 10px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.2s ease;
+  }
+  
+  .header nav a:hover {
+	color: #0099ff;
+  }
+  
+  .card {
+	background-color: #ffffff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin: 20px 0;
+  }
+  
+  .card img {
+	width: 100%;
+	height: auto;
+  }
+  
+  .card-body {
+	padding: 20px;
+  }
+  
+  .card-body h2 {
+	margin: 0;
+	font-size: 24px;
+  }
+  
+  .card-body p {
+	margin: 10px 0;
+	line-height: 1.5;
+  }
+  
+  .btn {
+	padding: 10px 20px;
+	background-color: #0099ff;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.2s ease;
+	display: block;
+    text-align: center;
+  }
+  
+  .btn:hover {
+	background-color: #0077cc;
+  }
+  
+  trip {
+	padding: 20px;
+  }
+  
+  ul {
+	margin-top: 5px;
+	margin-bottom: 15px;
+	list-style: none;
+	padding: 0;
+  }
+  
+  li {
+	margin-top: 5px;
+  }
+  
+  .loading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: x-large;
+  }
+  
+  .spinner {
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	border-left-color: #3498db;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+	to {
+	  transform: rotate(360deg);
+	}
+  }
+
+  footer {
+	background-color: #ccc;
+	padding: 4px 0;
+	position: relative; /* added */
+  }
+  
+  footer img {
+	position: absolute; /* added */
+	right: 20%; /* added */
+	top: 50%; /* added */
+	transform: translateY(-50%); /* added */
+	max-height: 200px; /* adjust to your image size */
+  }
+  
+  footer h3 {
+	margin-bottom: 20px;
+	color: #333;
+  }
+  
+  footer p {
+	margin-bottom: 10px;
+	font-size: 16px;
+	color: #555;
+  }
+  
+  footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  footer ul li {
+	margin-bottom: 10px;
+  }
+  
+  footer ul li a {
+	color: #555;
+	text-decoration: none;
+  }
+  
+  footer ul li a:hover {
+	color: #333;
+  }
+  
+  .social-media li {
+	display: inline-block;
+	margin-right: 10px;
+  }
+  
+  .social-media li a {
+	color: #555;
+  }
+  
+  .social-media li a:hover {
+	color: #333;
+  }
+  
+  footer p.text-center {
+	margin-top: 20px;
+	font-size: 14px;
+	color: #555;
+  }
+  
+  .rank {
+    font-size: 24px;
+	background-color: #0099ff;
+	border-radius: 15px;
+  }
+  .rank i {
+    color: #FFD700; /* Sets the star color to gold */
+  }
+  
+  /* Style the navigation bar */
+.navbar {
+	display: -webkit-box;
+    justify-content: space-between;
+	background-color: #354F52;
+	-webkit-box-align: center;
+	margin-bottom: 20px;
+  }
+  
+  /* Navbar links */
+  .navbar a {
+	padding: 12px;
+	color: white;
+	text-decoration: none;
+	font-size: 17px;
+	margin-top: 20px;
+  }
+  
+  /* Navbar links on mouse-over */
+  .navbar a:hover {
+	background-color: #000;
+	border-radius: 10px;
+	
+  }
+  
+  /* Current/active navbar link */
+  .active {
+	border-radius: 10px;
+	background-color: #04AA6D;
+  }
+  
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+	.navbar a {
+	  float: none;
+	  display: block;
+	}
+  }
+
+  .welcome-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #354F52;
+    text-shadow: 2px 2px 5px #F5F5F5;
+    margin-bottom: 20px;
+	margin-top: auto;
+	text-transform: uppercase;
+  }
