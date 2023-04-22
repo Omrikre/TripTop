@@ -40,15 +40,29 @@
     <select id="trip-type" name="trip-type">
       <option value="outdoor">Outdoor</option>
       <option value="indoor">Indoor</option>
+      <option value="both">Both</option>
     </select>
 
     <label for="food-type">Favorite food type:</label>
     <select id="food-type" name="food-type">
-      <option value="hamburger">Hamburger</option>
-      <option value="pizza">Pizza</option>
-      <option value="italian">Italian</option>
+      <option value="BBQ Steaks & Burgers">BBQ Steaks & Burgers</option>
+      <option value="Mexican">Mexican</option>
+      <option value="Italian">Italian</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Japanese">Japanese</option>
+      <option value="Thai">Thai</option>
+      <option value="Indian">Indian</option>
+      <option value="Mediterranean">Mediterranean</option>
+      <option value="French">French</option>
+      <option value="Greek">Greek</option>
     </select>
 
+    <label for="age-range-min">Minimum age in group:</label>
+    <input type="number" id="age-range-min" name="age-range-min" min="0" max="120" value="18">
+    
+    <label for="age-range-max">Maximum age in group:</label>
+    <input type="number" id="age-range-max" name="age-range-max" min="0" max="120" value="99">
+    
     <label for="mode-of-travel">Mode of travel:</label>
     <select id="mode-of-travel" name="mode-of-travel">
       <option value="walking">Walking</option>
@@ -63,6 +77,13 @@
       <option value="both">Both</option>
       <option value="kids">Kids</option>
       <option value="family">Family</option>
+    </select>
+
+    <label for="budget">Daily budget:</label>
+    <select id="budget" name="budget">
+      <option value="$0-$50">$0-$50 per day</option>
+      <option value="$50-$150">$50-$150 per day</option>
+      <option value="$150 and above">$150 and above</option>
     </select>
 
     <button id="submit-button" type="submit">Plan the Trip</button>
@@ -85,7 +106,7 @@
           <ul>
             <li><a href="#">Destinations</a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="about-us.html">About Us</a></li>
             <li><a href="#">FAQ</a></li>
           </ul>
         </div>
@@ -104,7 +125,7 @@
       </div>
 
     </div>
-  </footer>
+    </footer>
   
 
   <script src="script.js"></script>
