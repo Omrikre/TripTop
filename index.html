@@ -22,8 +22,8 @@
 
 
   <form>
-    <h1 class="welcome-title">Welcome to TripTop</h1>
-    <h1 class="welcome-title" style="font-size: x-large; text-transform:none">What would you like to have in your trip?</h1>
+    <h1 class="welcome-title" style=" text-transform:none" >Plan your trip with us</h1>
+    <h1 class="welcome-title" style="font-size: x-large;">What would you like to have in your trip?</h1>
     <label for="destination">Destination:</label>
     <input type="text" id="destination" name="destination" placeholder="e.g Tel-Aviv..."  required>
 
@@ -33,9 +33,6 @@
     <label for="return-date">Trip end Date:</label>
     <input type="date" id="return-date" name="return-date" required>
 
-    <label for="travelers-number">Number of travelers</label>
-    <input type="number" id="travelers-number" name="travelers-number" placeholder="e.g 1 / 2 / 3 / 4 / 5" required>
-
     <label for="trip-type">Trip type:</label>
     <select id="trip-type" name="trip-type">
       <option value="outdoor">Outdoor</option>
@@ -44,7 +41,7 @@
     </select>
 
     <label for="food-type">Favorite food type:</label>
-    <select id="food-type" name="food-type">
+    <select id="food-type" name="food-type" multiple size="3">
       <option value="BBQ Steaks & Burgers">BBQ Steaks & Burgers</option>
       <option value="Mexican">Mexican</option>
       <option value="Italian">Italian</option>
@@ -56,6 +53,7 @@
       <option value="French">French</option>
       <option value="Greek">Greek</option>
     </select>
+
 
     <label for="age-range-min">Minimum age in group:</label>
     <input type="number" id="age-range-min" name="age-range-min" min="0" max="120" value="18">
