@@ -182,23 +182,6 @@ body {
 	text-align: center;
   }
   
-  .header nav {
-	display: flex;
-  }
-  
-  .header nav a {
-	display: block;
-	padding: 10px;
-	color: #333333;
-	text-decoration: none;
-	font-weight: bold;
-	transition: color 0.2s ease;
-  }
-  
-  .header nav a:hover {
-	color: #0099ff;
-  }
-  
   .card {
 	background-color: #ffffff;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -372,6 +355,41 @@ body {
 	background-color: #000;
 	border-radius: 10px;
 	
+  }
+
+  /* Styles for desktop */
+@media (min-width: 768px) {
+	#menuDiv {
+	  margin-left: auto;
+	}
+  }
+
+  /* Mobile styles */
+@media (max-width: 767px) {
+	/* Navbar container */
+	.navbar {
+	  flex-wrap: wrap;
+	  align-items:flex-start;
+	  justify-content: space-between;
+	  background-color: #354F52;
+	  padding: 10px;
+	}
+	
+	/* Navbar links */
+	.navbar a {
+	  display: block;
+	  padding: 8px;
+	  color: white;
+	  text-decoration: none;
+	  font-size: 16px;
+	  margin: 5px;
+	  border-radius: 5px;
+	}
+	
+	/* Navbar links on mouse-over */
+	.navbar a:hover {
+	  background-color: #000;
+	}
   }
   
   /* Current/active navbar link */
