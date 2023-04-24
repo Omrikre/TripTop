@@ -9,7 +9,7 @@ loginForm.addEventListener('submit', (event) => {
   const password = document.querySelector('#password').value;
 
   if(email == 'admin@triptop.com' && password == 123) {
-    window.location.href = 'index.html';
+    window.location.href = 'search.html';
   }
   else {
     errorMessage.style.display = 'block';
