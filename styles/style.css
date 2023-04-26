@@ -22,9 +22,8 @@ body {
 	text-align: center;
 	font-size: 48px;
 	font-weight: bold;
-	color: #fff;
+	color: #000;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-	background-color: #354F52;
 	padding: 14px;
 	text-transform: uppercase;
 	letter-spacing: 4px;
@@ -261,7 +260,7 @@ body {
   }
 
   footer {
-	background-color: #ccc;
+	background-color: #ffffffd1;
 	padding: 4px 0;
 	position: relative; /* added */
   }
@@ -336,7 +335,7 @@ body {
 .navbar {
 	display: -webkit-box;
     justify-content: space-between;
-	background-color: #354F52;
+	background-color: #ffffff66;
 	-webkit-box-align: center;
 	margin-bottom: 20px;
   }
@@ -344,7 +343,7 @@ body {
   /* Navbar links */
   .navbar a {
 	padding: 12px;
-	color: white;
+	color: #000;
 	text-decoration: none;
 	font-size: 17px;
 	margin-top: 20px;
@@ -352,7 +351,7 @@ body {
   
   /* Navbar links on mouse-over */
   .navbar a:hover {
-	background-color: #000;
+	background-color: #04AA6D;
 	border-radius: 10px;
 	
   }
