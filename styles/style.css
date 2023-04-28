@@ -13,7 +13,7 @@ body {
 	padding: 0;
 	background-image: url('../img/bg.png');
 	background-size: auto;
-	background-repeat: no-repeat;
+	background-repeat: round;
 	/*animation: travel 60s linear infinite;*/
   }
   
@@ -95,7 +95,7 @@ body {
 	display: block;
 	margin: auto;
 	padding: 12px 30px;
-	background-color: #354F52;
+	background-color: #007bff;
 	color: #fff;
 	border-radius: 5px;
 	cursor: pointer;
@@ -206,7 +206,7 @@ body {
   
   .btn {
 	padding: 10px 20px;
-	background-color: #0099ff;
+	background-color: #354f52;
 	color: #ffffff;
 	text-decoration: none;
 	border-radius: 5px;
@@ -329,10 +329,9 @@ body {
     color: #FFD700; /* Sets the star color to gold */
   }
   
-  /* Style the navigation bar */
-.navbar {
+  .navbar {
 	display: -webkit-box;
-    justify-content: space-between;
+	justify-content: space-between;
 	background-color: #ffffff66;
 	-webkit-box-align: center;
 	margin-bottom: 20px;
@@ -348,10 +347,11 @@ body {
   }
   
   /* Navbar links on mouse-over */
-  .navbar a:hover {
+  .navbar a:not(.logo):hover {
 	background-color: #04AA6D;
 	border-radius: 10px;
   }
+  
 
   /* Styles for desktop */
 @media (min-width: 768px) {
@@ -406,7 +406,7 @@ body {
     text-align: center;
     font-size: 48px;
     font-weight: bold;
-    color: #007bff;
+    color: #007e50;
     text-shadow: 2px 2px 5px #F5F5F5;
     margin-bottom: 20px;
 	margin-top: auto;
