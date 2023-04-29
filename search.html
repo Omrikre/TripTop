@@ -6,7 +6,15 @@
   <title>Plan Your Trip | TripTop</title>
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
+  <!-- CDN of jQuery --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <!-- CDN for chosen plugin --> <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- CDN for CSS of chosen plugin --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"          crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    // Initiating the chosen plugin
+    $(document).ready(function(){
+        $("#select").chosen();
+    })
+  </script>    
 </head>
 <body>
 
@@ -41,7 +49,7 @@
     </select>
 
     <label for="food-type">Favorite food type:</label>
-    <select id="food-type" name="food-type" multiple size="3">
+    <select type="text" id="select" multiple>
       <option value="BBQ Steaks & Burgers">BBQ Steaks & Burgers</option>
       <option value="Mexican">Mexican</option>
       <option value="Italian">Italian</option>
@@ -54,7 +62,7 @@
       <option value="Greek">Greek</option>
     </select>
 
-
+    <br><br>
     <label for="age-range-min">Minimum age in group:</label>
     <input type="number" id="age-range-min" name="age-range-min" min="0" max="120" value="18">
     
