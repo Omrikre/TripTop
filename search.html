@@ -13,7 +13,8 @@
   <script>
     // Initiating the chosen plugin
     $(document).ready(function(){
-        $("#select").chosen();
+        $("#includeCategories").chosen();
+        $("#excludeCategories").chosen();
     })
   </script>    
 </head>
@@ -33,65 +34,55 @@
   <form>
     <h1 class="welcome-title" style=" text-transform:none" >Plan your trip with us</h1>
     <h1 class="welcome-title" style="font-size: x-large;">What would you like to have in your trip?</h1>
+
     <label for="destination">Destination:</label>
-    <input type="text" id="destination" name="destination" placeholder="e.g Tel-Aviv..."  required>
+    <input type="text" id="destination" name="destination" placeholder="e.g Tel-Aviv..." >
 
-    <label for="start-date">Trip start Date:</label>
-    <input type="date" id="start-date" name="start-date" required>
+    <label for="startDate">Trip start Date:</label>
+    <input type="date" id="startDate" name="startDate">
 
-    <label for="return-date">Trip end Date:</label>
-    <input type="date" id="return-date" name="return-date" required>
+    <label for="endDate">Trip end Date:</label>
+    <input type="date" id="endDate" name="endDate">
 
-    <label for="trip-type">Trip type:</label>
-    <select id="trip-type" name="trip-type">
-      <option value="outdoor">Outdoor</option>
-      <option value="indoor">Indoor</option>
-      <option value="both">Both</option>
+    <label for="NumberOfAttractionsPerDay">Number of attractions per day:</label>
+    <input placeholder="for e.g 3" type="number" id="NumberOfAttractionsPerDay" name="NumberOfAttractionsPerDay" min="1" max="4">
+
+    <label for="includeCategories">Include Categories:</label>
+    <select style="border: 1px;" type="text" id="includeCategories" multiple name="includeCategories">
+      <option value="outdoor-activities">Outdoor Activities</option>
+      <option value="sports">Sports</option>
+      <option value="museums">Museums</option>
+      <option value="food-and-drink">Food and Drink</option>
+      <option value="shopping">Shopping</option>
+      <option value="history-and-culture">History and Culture</option>
+      <option value="nature-and-parks">Nature and Parks</option>
+      <option value="nightlife">Nightlife</option>
+      <option value="theater-and-concerts">Theater and Concerts</option>
+      <option value="zoos-and-aquariums">Zoos and Aquariums</option>
     </select>
-
-    <label for="food-type">Favorite food type:</label>
-    <select type="text" id="select" multiple>
-      <option value="BBQ Steaks & Burgers">BBQ Steaks & Burgers</option>
-      <option value="Mexican">Mexican</option>
-      <option value="Italian">Italian</option>
-      <option value="Chinese">Chinese</option>
-      <option value="Japanese">Japanese</option>
-      <option value="Thai">Thai</option>
-      <option value="Indian">Indian</option>
-      <option value="Mediterranean">Mediterranean</option>
-      <option value="French">French</option>
-      <option value="Greek">Greek</option>
-    </select>
-
     <br><br>
-    <label for="age-range-min">Minimum age in group:</label>
-    <input type="number" id="age-range-min" name="age-range-min" min="0" max="120" value="18">
     
-    <label for="age-range-max">Maximum age in group:</label>
-    <input type="number" id="age-range-max" name="age-range-max" min="0" max="120" value="99">
-    
-    <label for="mode-of-travel">Mode of travel:</label>
-    <select id="mode-of-travel" name="mode-of-travel">
-      <option value="walking">Walking</option>
-      <option value="car">Car</option>
-      <option value="both">Both</option>
+    <label for="excludeCategories">Exclude Categories:</label>
+    <select type="text" id="excludeCategories" multiple name="excludeCategories">
+      <option value="outdoor-activities">Outdoor Activities</option>
+      <option value="sports">Sports</option>
+      <option value="museums">Museums</option>
+      <option value="food-and-drink">Food and Drink</option>
+      <option value="shopping">Shopping</option>
+      <option value="history-and-culture">History and Culture</option>
+      <option value="nature-and-parks">Nature and Parks</option>
+      <option value="nightlife">Nightlife</option>
+      <option value="theater-and-concerts">Theater and Concerts</option>
+      <option value="zoos-and-aquariums">Zoos and Aquariums</option>
     </select>
-
-    <label for="type-of-travelers">Type of travelers:</label>
-    <select id="type-of-travelers" name="type-of-travelers">
-      <option value="man">Man</option>
-      <option value="woman">Woman</option>
-      <option value="both">Both</option>
-      <option value="kids">Kids</option>
-      <option value="family">Family</option>
-    </select>
-
+    <br><br>
     <label for="budget">Daily budget:</label>
     <select id="budget" name="budget">
       <option value="$0-$50">$0-$50 per day</option>
       <option value="$50-$150">$50-$150 per day</option>
       <option value="$150 and above">$150 and above</option>
     </select>
+    <br><br>
 
     <button id="submit-button" type="submit">Plan the Trip</button>
 
@@ -111,7 +102,7 @@
         <div class="col-md-4">
           <h3>Explore</h3>
           <ul>
-            <li><a href="#">Destinations</a></li>
+            <li><a href="recommended-trips.html">Recommended Trips</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="about-us.html">About Us</a></li>
             <li><a href="#">FAQ</a></li>
