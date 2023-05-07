@@ -12,7 +12,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-image: url('../img/bg.png');
-	background-size: auto;
+	background-size: contain;
 	background-repeat: round;
 	/*animation: travel 60s linear infinite;*/
   }
@@ -243,12 +243,24 @@ body {
   }
   
   .spinner {
+	position: relative;
 	border: 4px solid rgba(0, 0, 0, 0.1);
 	border-left-color: #3498db;
 	border-radius: 50%;
 	width: 200px;
 	height: 200px;
-	animation: spin 1s linear infinite;
+	animation: spin 2s linear infinite;
+  }
+  
+  .person {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100px;
+	height: 100px;
+	background-image: url('../img/walking-man.png');
+	background-size: cover;
   }
   
   @keyframes spin {
@@ -256,6 +268,25 @@ body {
 	  transform: rotate(360deg);
 	}
   }
+  
+  @keyframes walk {
+	0% {
+	  transform: translate(-50%, -50%) rotate(0deg);
+	}
+	25% {
+	  transform: translate(-50%, -50%) rotate(45deg);
+	}
+	50% {
+	  transform: translate(-50%, -50%) rotate(90deg);
+	}
+	75% {
+	  transform: translate(-50%, -50%) rotate(135deg);
+	}
+	100% {
+	  transform: translate(-50%, -50%) rotate(180deg);
+	}
+  }
+  
 
   footer {
 	background-color: #ffffffd1;
@@ -491,7 +522,7 @@ body {
   }
 
   .home-page-font {
-	font-family: "Lucida Handwriting", "Courier New", monospace;
+	font-family: cursive;
 	font-size: 80px;
     max-width: 80%;
 	margin-top: 100px;

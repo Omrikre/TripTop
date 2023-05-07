@@ -23,7 +23,106 @@
 
   <form style="text-align: center;">
     <a tool style="float: right; color: black;" href="search.html"><i class="fas fa-edit edit-icon"></i></a>
-    <h2>Destination</h2>
+
+
+    <div id="form-container"></div>
+
+    <script>
+      //extract trip data parameter from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const tripDataParam = urlParams.get('data');
+      const tripData = JSON.parse(tripDataParam);
+//       const tripData = {
+//   "NumberOfAttractionsPerDay": 1,
+//   "amountOfDays": 2,
+//   "days": [
+//     {
+//       "attractions": [
+//         {
+//           "description": "This is the museum of the Vatican City.",
+//           "endTime": "11:30",
+//           "name": "The Vatican Museums",
+//           "orderInDay": 0,
+//           "startTime": "09:00"
+//         }
+//       ],
+//       "orderInTrip": 0
+//     },
+//     {
+//       "attractions": [
+//         {
+//           "description": "This is a museum located in the Villa Borghese gardens.",
+//           "endTime": "16:30",
+//           "name": "Galleria Borghese",
+//           "orderInDay": 0,
+//           "startTime": "14:30"
+//         }
+//       ],
+//       "orderInTrip": 1
+//     }
+//   ],
+//   "destination": "Rome",
+//   "endDate": "2023-05-05",
+//   "excludeCategories": [
+//     "sports"
+//   ],
+//   "includeCategories": [
+//     "museums"
+//   ],
+//   "startDate": "2023-05-04"
+// };
+      // generate HTML form based on the trip data
+      const formContainer = document.querySelector('#form-container');
+      const cityName = tripData.destination;
+      const cityNameWithoutSpaces = cityName.replace(/\s/g, '');
+
+      formContainer.innerHTML = `
+        <h1>Trip Information</h1>
+        <form>
+          <label style="font-weight:Bold;" for="destination">Destination:</label>
+          <span id="destination">${tripData.destination}</span><br><br>
+    
+          <label style="font-weight:Bold;" for="start_date">Start Date:</label>
+          <span id="start_date">${tripData.startDate}</span><br><br>
+    
+          <label style="font-weight:Bold;" for="end_date">End Date:</label>
+          <span id="end_date">${tripData.endDate}</span><br><br>
+    
+          <table>
+            <tr>
+              <th>Day Of The Trip</th>
+              <th>Attraction Name</th>
+              <th>Description</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+              <th>Google Places Link</th>
+            </tr>
+            <!-- Generate table rows dynamically based on the trip data -->
+            ${tripData.days.map((day, i) => {
+              // Add a blank row for every new day
+              const blankRow = i > 0 ? '<tr><td colspan="6">&nbsp;</td></tr>' : '';
+              return blankRow + day.attractions.map((attraction, j) => {
+                return `
+                  <tr>
+                    <td>Day ${i + 1}</td>
+                    <td>${attraction.name}</td>
+                    <td>${attraction.description}</td>
+                    <td>${attraction.startTime}</td>
+                    <td>${attraction.endTime}</td>
+                    <td><a href="https://www.google.com/maps/search/?api=1&query=${attraction.name}+${tripData.destination}" target="_blank">Google Maps Link</a></td>
+                  </tr>
+                `;
+              }).join('');
+            }).join('')}
+          </table>
+
+    <img style="border-radius: 5px;" height="200" src="https://source.unsplash.com/1600x900/?${cityNameWithoutSpaces}" alt="Trip image">
+
+        </form>
+      `;
+    </script>
+    
+    <!-- <h2>Destination</h2>
     <p>New York City</p>
     
     <h2>Trip Dates</h2>
@@ -138,9 +237,7 @@
       </tr>
       </tbody>
     </table>
-    
-
-    <img style="border-radius: 5px;" src="https://picsum.photos/300/200" alt="Trip image">
+     -->
     
     <br><br>
     <button><a href="itinerary.ics" download>Export to ICS</a></button>
