@@ -106,3 +106,30 @@ form.addEventListener('submit', (event) => {
   })
 });
 
+// This code can be used to animate the button magically
+
+const btn = document.querySelector('.magical-btn');
+const bubble = document.createElement('span');
+bubble.classList.add('bubble');
+btn.appendChild(bubble);
+
+btn.addEventListener('mousemove', function(e) {
+  const rect = btn.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  bubble.style.left = x + 'px';
+  bubble.style.top = y + 'px';
+});
+
+btn.addEventListener('mouseleave', function() {
+  bubble.style.width = 0;
+  bubble.style.height = 0;
+});
+
+btn.addEventListener('mouseenter', function() {
+  const rect = btn.getBoundingClientRect();
+  const diameter = Math.max(rect.width, rect.height);
+  bubble.style.width = diameter + 'px';
+  bubble.style.height = diameter + 'px';
+});
+
