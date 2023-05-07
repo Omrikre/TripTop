@@ -38,8 +38,27 @@ form.addEventListener('submit', (event) => {
   var diffDays = timeDiff / (1000 * 3600 * 24);
 
   // If the difference is greater than 5, display an error message
-  if (diffDays > 5) {
+   if (diffDays > 5) {
     alert('Error: Maximum trip length is 5 days.');
+    event.preventDefault();
+    const prevDest = document.getElementById('destination').value;
+    const prevStartDate = document.getElementById('startDate').value;
+    const prevEndDate = document.getElementById('endDate').value;
+    const prevNumAttractions = document.getElementById('NumberOfAttractionsPerDay').value;
+    const prevIncludeCategories = Array.from(document.getElementById('includeCategories').selectedOptions).map(option => option.value);
+    const prevExcludeCategories = Array.from(document.getElementById('excludeCategories').selectedOptions).map(option => option.value);
+    const prevBudget = document.getElementById('budget').value;
+    document.getElementById('destination').value = prevDest;
+    document.getElementById('startDate').value = prevStartDate;
+    document.getElementById('endDate').value = prevEndDate;
+    document.getElementById('NumberOfAttractionsPerDay').value = prevNumAttractions;
+    Array.from(document.getElementById('includeCategories').options).forEach(option => {
+      option.selected = prevIncludeCategories.includes(option.value);
+    });
+    Array.from(document.getElementById('excludeCategories').options).forEach(option => {
+      option.selected = prevExcludeCategories.includes(option.value);
+    });
+    document.getElementById('budget').value = prevBudget;
     return;
   }
   event.preventDefault();
