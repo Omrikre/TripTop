@@ -389,34 +389,6 @@ body {
 	  margin-left: auto;
 	}
   }
-
-  /* Mobile styles */
-@media (max-width: 767px) {
-	/* Navbar container */
-	.navbar {
-	  flex-wrap: wrap;
-	  align-items:flex-start;
-	  justify-content: space-between;
-	  background-color: #354F52;
-	  padding: 10px;
-	}
-	
-	/* Navbar links */
-	.navbar a {
-	  display: block;
-	  padding: 8px;
-	  color: white;
-	  text-decoration: none;
-	  font-size: 16px;
-	  margin: 5px;
-	  border-radius: 5px;
-	}
-	
-	/* Navbar links on mouse-over */
-	.navbar a:hover {
-	  background-color: #000;
-	}
-  }
   
   /* Current/active navbar link */
   .active {
