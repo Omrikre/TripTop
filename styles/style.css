@@ -8,7 +8,7 @@
   }
   
 body {
-	font-family: Arial, sans-serif;
+	font-family: "Century Gothic";
 	margin: 0;
 	padding: 0;
 	background-image: url('../img/bg1.png');
@@ -20,6 +20,7 @@ body {
   .site-header {
 	margin-block-start: 15px;
 	text-align: center;
+	font-family: "Century Gothic";
 	font-size: 48px;
 	font-weight: bold;
 	color: #000;
@@ -31,7 +32,7 @@ body {
   }
   
   form {
-	font-family: cursive;
+	font-family: "Century Gothic";
 	max-width: 750px;
 	margin: auto;
 	padding: 20px;
@@ -42,6 +43,7 @@ body {
   }
   
   select {
+	font-family: "Century Gothic";
 	font-size: 1.2rem;
 	padding: 0.5rem;
 	border-radius: 5px;
@@ -66,9 +68,10 @@ body {
   }
 
   .about-us-paragraph {
+	font-family: "Century Gothic";
 	margin: auto;
 	max-width: 1000px;
-	background-color: #332f2f6a;
+	background-color: rgba(255, 255, 255, 0.8);
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -77,7 +80,6 @@ body {
 	text-align: justify;
 	align-content: center;
 	text-align: -webkit-center;
-	color: white;
   }
   
   input[type="text"],
@@ -95,10 +97,11 @@ body {
 	display: block;
 	margin: auto;
 	padding: 12px 30px;
-	background-color: #007bff;
-	color: #fff;
-	border-radius: 5px;
+	background-color: #04AA6D;
+	border-radius: 10px;
 	cursor: pointer;
+	border: none;
+    color: black;
   }
 
 
@@ -168,12 +171,14 @@ body {
   }
   
   .trip-card h2 {
+	font-family: "Century Gothic";
 	font-size: 1.5rem;
 	margin: 1rem;
 	text-align: center;
   }
   
   .trip-card p {
+	font-family: "Century Gothic";
 	font-size: 1rem;
 	margin: 0 1rem 1rem 1rem;
 	text-align: center;
@@ -235,6 +240,7 @@ body {
   }
   
   .loading {
+	font-family: "Century Gothic";
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -308,6 +314,7 @@ body {
   }
   
   footer p {
+	font-family: "Century Gothic";
 	margin-bottom: 10px;
 	font-size: 16px;
 	color: #555;
@@ -346,12 +353,14 @@ body {
   }
   
   footer p.text-center {
+	font-family: "Century Gothic";
 	margin-top: 20px;
 	font-size: 14px;
 	color: #555;
   }
   
   .rank {
+	font-family: "Century Gothic";
     font-size: 24px;
 	background-color: #0099ff;
 	border-radius: 15px;
@@ -373,6 +382,7 @@ body {
 	padding: 12px;
 	color: #000;
 	text-decoration: none;
+	font-family: "Century Gothic";
 	font-size: 17px;
 	margin-top: 20px;
   }
@@ -407,19 +417,21 @@ body {
 
   .welcome-title {
     text-align: center;
+	font-family: "Century Gothic";
     font-size: 48px;
     font-weight: bold;
     color: #007e50;
     text-shadow: 2px 2px 5px #F5F5F5;
     margin-bottom: 20px;
 	margin-top: auto;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
   }
 
   table {
 	border-collapse: collapse;
 	width: 100%;
 	margin-bottom: 1rem;
+	font-family: "Century Gothic";
 	font-size: smaller;
 	text-align: center;
   }
@@ -450,6 +462,7 @@ body {
 	padding: 0.5rem 1rem;
 	border-radius: 0.25rem;
 	font-size: 1rem;
+	font-family: "Century Gothic";
 	cursor: pointer;
   }
 
@@ -479,6 +492,7 @@ body {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	border-radius: 10px;
 	background-color: rgba(0, 0, 0, 0.8);
 	color: #fff;
 	font-size: 16px;
@@ -494,16 +508,17 @@ body {
   }
 
   .home-page-font {
-	font-family: cursive;
+	font-family: "Century Gothic";
 	font-size: 80px;
     max-width: 80%;
 	margin-top: 100px;
+	text-align: center;
   }
   
   .magical-btn {
+	font-family: "Century Gothic";
 	font-size: xx-large;
 	font-weight: bold;
-	text-transform: uppercase;
 	color: #333;
 	background-color: #04AA6D;
 	border: none;
@@ -511,14 +526,14 @@ body {
 	border-radius: 30px;
 	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 	transition: all 0.3s ease-in-out;
-	margin-left: 20%;
+	margin-left: 35%;
   }
   
 
   #destinations {
-	margin-top: 12%;
+	font-family: "Century Gothic";
+	margin-top: 7%;
 	text-align: center;
-	font-family: cursive;
   }
   
   .destination-container {
