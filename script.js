@@ -66,7 +66,11 @@ form.addEventListener('submit', (event) => {
   const formData = new FormData(form);
   const includeCategories = Array.from(formData.getAll('includeCategories'));
   const excludeCategories = Array.from(formData.getAll('excludeCategories'));
-  
+  const hasCommonValues = includeCategories.some(category => excludeCategories.includes(category));
+  if(hasCommonValues) {
+    alert("Can't choose the same category to include and exclude.");
+    throw new Error("Can't choose the same category to include and exclude.");
+  }
   // convert numeric strings to numbers
   const jsonObject = Object.fromEntries(formData.entries());
   for (const [key, value] of Object.entries(jsonObject)) {
