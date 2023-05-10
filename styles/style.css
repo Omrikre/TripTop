@@ -219,9 +219,9 @@ form {
   
   .btn {
 	padding: 10px 20px;
-	background-color: #354f52;
-	color: #ffffff;
-	text-decoration: none;
+	background-color: #04AA6D;
+	color: black;
+	font-weight: bold;
 	border-radius: 5px;
 	transition: background-color 0.2s ease;
 	display: block;
