@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410373926763817"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/logo-old.png" type="image/x-icon">
+  <title>Tokyo Trip Page | TripTop</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html" class="logo"><img style="border-radius: 10px;" src="img/logo.png" width="200px" height="65px"></a>
+    <div id="menuDiv">
+      <a href="index.html"><i class="fa fa-home"></i> Home</a>
+      <a href="search.html"><i class="fa fa-search"></i> Plan Your Trip</a>
+      <a class="active" href="recommended-trips.html"><i class="fa fa-fw fa-fire"></i>Recommended Trips</a>
+      <a href="about-us.html"><i class="fa fa-fw fa-info"></i> About Us</a>
+    </div>
+  </div>
+
+  <form style="text-align: center;">
+
+
+    <div id="form-container"></div>
+
+    <script>
+  const tripData = {
+  "NumberOfAttractionsPerDay": 3,
+  "amountOfDays": 2,
+  "days": [
+    {
+      "attractions": [
+        {
+          "name": "Sensoji Temple",
+          "description": "One of Tokyo's most famous and colorful temples located in the historic Asakusa district.",
+          "startTime": "09:00",
+          "endTime": "11:00",
+          "orderInDay": 0
+        },
+        {
+          "name": "Tsukiji Fish Market",
+          "description": "One of the world's largest fish markets with a lively atmosphere and fresh seafood.",
+          "startTime": "12:00",
+          "endTime": "14:00",
+          "orderInDay": 1
+        },
+        {
+          "name": "Tokyo Skytree",
+          "description": "The tallest tower in the world offering panoramic views of Tokyo from its observation decks.",
+          "startTime": "16:00",
+          "endTime": "18:00",
+          "orderInDay": 2
+        }
+      ],
+      "orderInTrip": 0
+    },
+    {
+      "attractions": [
+        {
+          "name": "Meiji Shrine",
+          "description": "A serene Shinto shrine located in a forested park in the heart of Tokyo.",
+          "startTime": "09:00",
+          "endTime": "11:00",
+          "orderInDay": 0
+        },
+        {
+          "name": "Shibuya Crossing",
+          "description": "One of the busiest and most iconic intersections in the world, located in the trendy Shibuya neighborhood.",
+          "startTime": "12:00",
+          "endTime": "14:00",
+          "orderInDay": 1
+        },
+        {
+          "name": "Harajuku",
+          "description": "A colorful and fashionable neighborhood known for its street style and cute cafes.",
+          "startTime": "16:00",
+          "endTime": "18:00",
+          "orderInDay": 2
+        }
+      ],
+      "orderInTrip": 1
+    }
+  ],
+  "destination": "Tokyo",
+  "excludeCategories": [],
+  "includeCategories": ["temples", "markets", "observation-decks", "parks", "neighborhoods"],
+  "startDate": "2023-06-01",
+  "endDate": "2023-06-02"
+};
+
+
+      const formContainer = document.querySelector('#form-container');
+      const cityName = tripData.destination;
+      const cityNameWithoutSpaces = cityName.replace(/\s/g, '');
+
+      formContainer.innerHTML = `
+        <h1 class="welcome-title">Trip Information</h1>
+        <form>
+          <label style="font-weight:Bold;" for="destination">Destination:</label>
+          <span id="destination">${tripData.destination}</span><br><br>
+    
+          <table>
+            <tr>
+              <th>Day Of The Trip</th>
+              <th>Attraction Name</th>
+              <th>Description</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+              <th>Google Places Link</th>
+            </tr>
+            <!-- Generate table rows dynamically based on the trip data -->
+            ${tripData.days.map((day, i) => {
+              // Add a blank row for every new day
+              const blankRow = i > 0 ? '<tr><td colspan="6">&nbsp;</td></tr>' : '';
+              return blankRow + day.attractions.map((attraction, j) => {
+                return `
+                  <tr>
+                    <td>Day ${i + 1}</td>
+                    <td>${attraction.name}</td>
+                    <td>${attraction.description}</td>
+                    <td>${attraction.startTime}</td>
+                    <td>${attraction.endTime}</td>
+                    <td><a href="https://www.google.com/maps/search/?api=1&query=${attraction.name}+${tripData.destination}" target="_blank">Google Maps Link</a></td>
+                  </tr>
+                `;
+              }).join('');
+            }).join('')}
+          </table>
+
+    <img style="border-radius: 5px;" height="200" src="https://source.unsplash.com/1600x900/?${cityNameWithoutSpaces}" alt="Trip image">
+
+        </form>
+      `;
+    </script>
+    
+    <br><br>
+    <button><a href="itinerary.ics" download>Export to ICS</a></button>
+
+  <br><br>
+    <div class="rank">
+      <label for="tripRank">Rate the trip:</label>
+      <input type="hidden" name="tripRank" id="tripRank" value="0">
+      <i class="far fa-star" data-star="1"></i>
+      <i class="far fa-star" data-star="2"></i>
+      <i class="far fa-star" data-star="3"></i>
+      <i class="far fa-star" data-star="4"></i>
+      <i class="far fa-star" data-star="5"></i>
+    </div>
+  </form>
+  <br><br><br>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" style="float: left;">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> The Academic College of Tel Aviv–Yaffo</p>
+          <p><i class="fas fa-envelope"></i> noreply@triptop.com</p>
+          <p><i class="fas fa-phone"></i> +972-54678910</p>
+        </div>
+        <div class="col-md-4" style="float: right;">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+  <div style="text-align: center;">
+    <ul class="social-media">
+      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+    </ul>
+  </div>
+    <p style="text-align: center;">&copy; 2023 TripTop team. All rights reserved.</p>
+  </footer>
+  <script src="rank-trip-script.js"></script>
+</body>
+
+</html>

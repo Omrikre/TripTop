@@ -155,7 +155,6 @@ const cities = [
   "St. Petersburg, Russia",
   "Macau SAR",
   "Bucharest, Romania",
-  "Riyadh, Saudi Arabia",
   "Muscat, Oman",
   "Copenhagen, Denmark",
   "Kiev, Ukraine",
@@ -163,7 +162,6 @@ const cities = [
   "Stockholm, Sweden",
   "Cape Town, South Africa",
   "Toronto, Canada",
-  "Osaka, Japan",
   "Washington DC, USA",
   "Seattle, USA",
   "Santiago, Chile",
@@ -174,7 +172,6 @@ const cities = [
   "Lima, Peru",
   "Marseille, France",
   "Quebec City, Canada",
-  "Bucharest, Romania",
   "Sofia, Bulgaria",
   "Innsbruck, Austria",
   "Reykjavik, Iceland",
@@ -192,7 +189,7 @@ const cities = [
   "Tel-Aviv, Israel",
   "Lviv, Ukraine",
   "Gothenburg, Sweden" ];
-
+  
   cities.sort();
 
   const dropdown = document.getElementById("destination");
