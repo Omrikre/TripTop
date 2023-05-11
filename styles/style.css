@@ -219,8 +219,7 @@ form {
   
   .btn {
 	padding: 10px 20px;
-	background-color: #04AA6D;
-	color: black;
+	color: #04AA6D;
 	font-weight: bold;
 	border-radius: 5px;
 	transition: background-color 0.2s ease;
@@ -229,7 +228,8 @@ form {
   }
   
   .btn:hover {
-	background-color: darkgreen;
+	background-color: #04AA6D;
+	color: #000;
   }
   
   trip {
