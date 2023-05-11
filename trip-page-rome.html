@@ -166,7 +166,8 @@
     </script>
     
     <br><br>
-    <button><a onclick="downloadICal(tripData)" download>Export to ICS</a></button>
+    <button><a onclick="event.preventDefault(); downloadICal(tripData);" download>Export to ICS</a></button>
+
 
   <br><br>
     <div class="rank">
