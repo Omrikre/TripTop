@@ -1,3 +1,12 @@
+// Get the current date
+const today = new Date().toISOString().split('T')[0];
+
+// Set the minimum date for the start date input
+document.getElementById('startDate').setAttribute('min', today);
+
+// Set the minimum date for the end date input to be the same as the start date input
+document.getElementById('endDate').setAttribute('min', today);
+
 function displayLoadingForm(formContainer) {
   // Array of jokes
   var jokes = [    "Why did the bicycle fall over? Because it was two tired!",    "Why did the tomato turn red? Because it saw the salad dressing!",    "What did the grape say when it got stepped on? Nothing, it just let out a little wine.",    "Why don't scientists trust atoms? Because they make up everything.",    "What do you call an alligator in a vest? An investi-gator.",    "Why did the chicken cross the playground? To get to the other slide.",    "Why do seagulls fly over the sea? Because if they flew over the bay, they would be bagels.",    "Why did the cookie go to the doctor? Because it was feeling crummy.",    "Why did the scarecrow win an award? Because he was outstanding in his field.",    "What do you get when you cross a snowman and a shark? Frostbite.",    "What do you call a fake noodle? An impasta."  ];
@@ -21,8 +30,62 @@ function displayLoadingForm(formContainer) {
         <p style="text-align: center; color: blue; font-size: large;" id="joke">${joke}</p>
         <br>
       </div>
+
+      <div class="game">
+      <h1 class="welcome-title" style="font-size:xx-large";>While we work on planning your trip, why not take some time to play a game?</h1>
+      <div class="cards-grid"></div>
+    </div>
+
     </form>
   `;
+
+  const cardsGrid = document.querySelector(".cards-grid");
+const cards = ["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
+let firstCard = null;
+let secondCard = null;
+
+// Shuffle the cards array
+cards.sort(() => Math.random() - 0.5);
+
+// Create and add the cards to the grid
+cards.forEach((card) => {
+  const div = document.createElement("div");
+  div.classList.add("card");
+  div.dataset.card = card;
+  div.textContent = "?";
+  div.addEventListener("click", handleCardClick);
+  cardsGrid.appendChild(div);
+});
+
+function handleCardClick() {
+  if (this === firstCard) {
+    return;
+  }
+
+  this.textContent = this.dataset.card;
+
+  if (!firstCard) {
+    firstCard = this;
+    return;
+  }
+
+  secondCard = this;
+
+  if (firstCard.dataset.card === secondCard.dataset.card) {
+    firstCard.removeEventListener("click", handleCardClick);
+    secondCard.removeEventListener("click", handleCardClick);
+    firstCard = null;
+    secondCard = null;
+  } else {
+    setTimeout(() => {
+      firstCard.textContent = "?";
+      secondCard.textContent = "?";
+      firstCard = null;
+      secondCard = null;
+    }, 1000);
+  }
+}
+
 }
 
 
@@ -92,6 +155,7 @@ form.addEventListener('submit', (event) => {
 });
 
 const cities = [
+  "Frankfurt, Germany",
   "Bangkok, Thailand",
   "Paris, France",
   "London, UK",
