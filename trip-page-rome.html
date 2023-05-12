@@ -9,6 +9,8 @@
   <title>Rome Trip Page | TripTop</title>
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
   <div class="navbar">
@@ -152,24 +154,70 @@
                     <td>${attraction.description}</td>
                     <td>${attraction.startTime}</td>
                     <td>${attraction.endTime}</td>
-                    <td><a href="https://www.google.com/maps/search/?api=1&query=${attraction.name}+${tripData.destination}" target="_blank">Google Maps Link</a></td>
+                    <td><a style="font-weight:bold" href="https://www.google.com/maps/search/?api=1&query=${attraction.name}+${tripData.destination}" target="_blank">Google Maps Link</a></td>
                   </tr>
                 `;
               }).join('');
             }).join('')}
           </table>
 
-    <img style="border-radius: 5px;" height="200" src="https://source.unsplash.com/1600x900/?${cityNameWithoutSpaces}" alt="Trip image">
+    <img style="border-radius: 5px;" height="200" src="https://source.unsplash.com/1600x900/?rome" alt="Trip image">
 
         </form>
-      `;
-    </script>
-    
-    <br><br>
-    <button><a onclick="event.preventDefault(); downloadICal(tripData);" download>Export to ICS</a></button>
+        `;
+        const placeName = tripData.destination; // Replace with the name of the place you want to get the coordinates for
+
+// Use OSM Nominatim to get the coordinates of the place
+fetch(`https://nominatim.openstreetmap.org/search?q=${placeName}&format=json`)
+  .then(response => response.json())
+  .then(data => {
+    if (data.length > 0) {
+      // Get the latitude and longitude of the first result (assuming there is one)
+      const lat = data[0].lat;
+      const lon = data[0].lon;
+
+      // Create the map
+      var map = L.map('map').setView([lat, lon], 13);
+
+      // Add a tile layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+      }).addTo(map);
+
+      // Loop through each day of the trip
+      tripData.days.forEach(day => {
+        // Loop through each attraction on the day
+        day.attractions.forEach(attraction => {
+          // Use OSM Nominatim to get the coordinates of the attraction
+          fetch(`https://nominatim.openstreetmap.org/search?q=${attraction.name}, ${tripData.destination}&format=json`)
+            .then(response => response.json())
+            .then(data => {
+              if (data.length > 0) {
+                // Get the latitude and longitude of the first result (assuming there is one)
+                const lat = data[0].lat;
+                const lon = data[0].lon;
+
+                // Add a marker to the map for the attraction
+                var marker = L.marker([lat, lon]).addTo(map);
+
+                // Add a popup to the marker with the attraction's name and description
+                marker.bindPopup(`<h3>${attraction.name}</h3><p>${attraction.description}</p>`).openPopup();
+              }
+            });
+        });
+      });
+    }
+  });
+</script>
+
+<br><br>
+<button><a onclick="event.preventDefault(); downloadICal(tripData);" download>Export to ICS</a></button>
 
 
-  <br><br>
+<br><br>
+<div id="map"></div>
+<br><br>
     <div class="rank">
       <label for="tripRank">Rate the trip:</label>
       <input type="hidden" name="tripRank" id="tripRank" value="0">
