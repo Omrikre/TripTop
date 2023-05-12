@@ -96,10 +96,10 @@
           <table>
             <tr>
               <th>Day Of The Trip</th>
-              <th>Attraction Name</th>
-              <th>Description</th>
               <th>Start Time</th>
               <th>End Time</th>
+              <th>Attraction Name</th>
+              <th>Description</th>
               <th>Google Places Link</th>
             </tr>
             <!-- Generate table rows dynamically based on the trip data -->
@@ -110,10 +110,10 @@
                 return `
                   <tr>
                     <td>Day ${i + 1}</td>
-                    <td>${attraction.name}</td>
-                    <td>${attraction.description}</td>
                     <td>${attraction.startTime}</td>
                     <td>${attraction.endTime}</td>
+                    <td>${attraction.name}</td>
+                    <td>${attraction.description}</td>
                     <td><a style="font-weight:bold" href="https://www.google.com/maps/search/?api=1&query=${attraction.name}+${tripData.destination}" target="_blank">Google Maps Link</a></td>
                   </tr>
                 `;
