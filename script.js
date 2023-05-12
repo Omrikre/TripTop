@@ -92,8 +92,6 @@ function displayLoadingForm(formContainer) {
   }
 }
 
-
-
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (event) => {
