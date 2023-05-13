@@ -116,6 +116,23 @@ form.addEventListener('submit', (event) => {
   }
   
   const formData = new FormData(form);
+  const budgetSelect = document.getElementById("budget");
+  let budgetValue = "";
+
+  switch (budgetSelect.value) {
+    case "$0-$50":
+      budgetValue = "low";
+      break;
+    case "$50-$150":
+      budgetValue = "medium";
+      break;
+    case "$150 and above":
+      budgetValue = "high";
+      break;
+  }
+
+formData.set("budget", budgetValue);
+
   const includeCategories = Array.from(formData.getAll('includeCategories'));
   const excludeCategories = Array.from(formData.getAll('excludeCategories'));
   const hasCommonValues = includeCategories.some(category => excludeCategories.includes(category));
