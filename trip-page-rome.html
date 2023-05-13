@@ -24,15 +24,12 @@
   </div>
 
   <form style="text-align: center; max-width: 60%;">
+    <a onclick="event.preventDefault(); downloadICal(tripData);" download style="float: right; color: black;" title="Export to iCalendar"><i class="far fa-calendar-alt" style="cursor: pointer;"></i></a>
 
 
     <div id="form-container"></div>
     <script src="scripts/rome-trip-script.js"></script>
     <script src="scripts/trip-page-script.js"></script>
-
-
-<br><br>
-<button><a onclick="event.preventDefault(); downloadICal(tripData);" download>Export to ICS</a></button>
 
 
 <br><br>
