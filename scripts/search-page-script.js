@@ -137,14 +137,11 @@ form.addEventListener('submit', (event) => {
   const jsonString = JSON.stringify(jsonObject);
   
 
-  const url = 'https://triptop.azurewebsites.net/trip/create'; // replace with your server URL
+    const url = 'https://triptop.azurewebsites.net/trip/create'; // replace with your server URL
   displayLoadingForm(form);
 
   fetch(url, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
     body: jsonString
   })
   .then(response => {
@@ -160,6 +157,7 @@ form.addEventListener('submit', (event) => {
     window.location.href = "error-page.html";
     console.error(error);
   })
+
 });
 
 const cities = [
