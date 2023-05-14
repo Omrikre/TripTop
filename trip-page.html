@@ -33,10 +33,7 @@
     <div id="form-container"></div>
 
     <script>
-      //extract trip data parameter from URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const tripDataParam = urlParams.get('data');
-      const tripData = JSON.parse(tripDataParam);
+      const tripData = JSON.parse(sessionStorage.getItem('tripDataFromSessionStorage'));
     </script>
     <script src="scripts/trip-page-script.js"></script>
 

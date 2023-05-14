@@ -168,7 +168,8 @@ formData.set("budget", budgetValue);
     throw new Error('Network response was not ok.');
   })
   .then(data => {
-    window.location.href = `trip-page.html?data=${JSON.stringify(data)}`;
+    sessionStorage.setItem('tripDataFromSessionStorage', JSON.stringify(data));
+    window.location.href = "trip-page.html";
   })
   .catch(error => {
     window.location.href = "error-page.html";
