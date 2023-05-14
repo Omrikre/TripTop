@@ -16,29 +16,61 @@ function displayLoadingForm(formContainer) {
   var joke = jokes[jokeIndex];
 
   formContainer.innerHTML = `
-    <form>
-      <div class="loading">
-        <div class="spinner">
-          <div class="person"></div>
-        </div>
-        <p style="text-align: center; text-transform: uppercase;">Thank you for choosing TripTop.</p>
-        <p style="text-align: center;">
-          We are creating personalized travel itinerary based on your preferences.
-          <br>
-          This may take a few moments. Thank you for your patience.
-        </p>
-        <p style="text-align: center; color: blue; font-size: large;" id="joke">${joke}</p>
-        <br>
+  <form>
+    <div class="loading">
+      <div class="spinner">
+        <div class="person"></div>
       </div>
-
-      <div class="game">
-      <h1 class="welcome-title" style="font-size:xx-large";>While we work on planning your trip, why not take some time to play a game?</h1>
-      <h3>find matching pairs of cards by flipping them over two at a time.</h3>
-      <div class="cards-grid"></div>
+      <p style="text-align: center; text-transform: uppercase;">Thank you for choosing TripTop.</p>
+      <p style="text-align: center;">
+        We are creating personalized travel itinerary based on your preferences.
+        <br>
+        This may take a few moments. Thank you for your patience.
+      </p>
+      <br>
+      <button onclick="event.preventDefault();" id="joke-button" class="btn"  style="color:blue;">Click to read our daily joke</button>
+      <div id="joke-container" style="display: none;">
+        <p style="text-align: center; color: blue; font-size: large;" id="joke">${joke}</p>
+      </div>
+      <button onclick="event.preventDefault();" id="game-button" class="btn" style="color:blue;margin-top:1%">Click to play a game while waiting for your trip</button>
+      <br>
+      <div id="game-display" class="game" style="display: none;">
+        <h1 class="welcome-title" style="font-size:xx-large">While we work on planning your trip, take some time to play a game!</h1>
+        <h3 style="text-align:center;">Find matching pairs of cards by flipping them over two at a time.</h3>
+        <div class="cards-grid"></div>
+      </div>
     </div>
+  </form>
+    <style>
+    #game-button:hover,#joke-button:hover  {
+      background-color: white;
+    }
+  </style>
+`;
 
-    </form>
-  `;
+  const jokeButton = document.getElementById("joke-button");
+  const jokeContainer = document.getElementById("joke-container");
+
+  jokeButton.addEventListener("click", () => {
+    if (jokeContainer.style.display === "none") {
+      jokeContainer.style.display = "block";
+    } else {
+      jokeContainer.style.display = "none";
+    }
+  });
+
+  const gameButton = document.getElementById("game-button");
+  const gameDisplay = document.getElementById("game-display");
+
+  gameButton.addEventListener("click", () => {
+    if (gameDisplay.style.display === "none") {
+      gameDisplay.style.display = "block";
+    } else {
+      gameDisplay.style.display = "none";
+    }
+  });
+
+
 
   const cardsGrid = document.querySelector(".cards-grid");
   const cards = ["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
