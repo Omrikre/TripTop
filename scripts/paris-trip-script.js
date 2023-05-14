@@ -59,3 +59,4 @@ const tripData = {
 "startDate": "2023-07-01",
 "endDate": "2023-07-02"
 };
+tripData.isConstTrip = true;

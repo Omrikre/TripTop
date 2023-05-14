@@ -64,6 +64,7 @@ const tripData = {
       "museums",
       "landmarks"
     ],
-    "startDate": "2023-10-14"
+    "startDate": "2023-10-14",
   };
+  tripData.isConstTrip = true;
   

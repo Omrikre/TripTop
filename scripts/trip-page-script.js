@@ -8,6 +8,15 @@ formContainer.innerHTML = `
     <label style="font-weight:Bold;" for="destination">Destination:</label>
     <span id="destination">${tripData.destination}</span><br><br>
 
+    ${tripData.isConstTrip ? '' : `
+    <label style="font-weight:Bold;" for="startDate">Start Date:</label>
+    <span id="startDate">${tripData.startDate}</span><br><br>
+
+    <label style="font-weight:Bold;" for="endDate">End Date:</label>
+    <span id="endDate">${tripData.endDate}</span><br><br>
+    `}
+
+
     <table>
     <tr>
         <th>Day Of The Trip</th>
