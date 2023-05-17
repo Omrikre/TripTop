@@ -391,8 +391,7 @@ form {
   
   /* Navbar links on mouse-over */
   .navbar a:not(.logo):hover {
-	background-color: #04AA6D;
-	border-radius: 10px;
+	border-bottom: 2px solid #04AA6D;
   }
   
 
@@ -405,8 +404,7 @@ form {
   
   /* Current/active navbar link */
   .active {
-	border-radius: 10px;
-	background-color: #04AA6D;
+	border-bottom: 2px solid #04AA6D;
   }
   
   /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
