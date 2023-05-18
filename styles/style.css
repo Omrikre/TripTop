@@ -1,5 +1,5 @@
 html {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto Slab', sans-serif;
   }
 
 @keyframes travel {
@@ -137,7 +137,6 @@ form {
   }
 
   .container {
-	max-width: 960px;
 	margin: 0 auto;
 	padding: 20px;
   }
@@ -267,7 +266,7 @@ form {
   .person {
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	left: 40%;
 	transform: translate(-50%, -50%);
 	width: 100px;
 	height: 100px;
@@ -513,6 +512,7 @@ form {
   }
   
   .magical-btn {
+	margin-top: 1%;
 	font-size: xx-large;
 	font-weight: bold;
 	color: #333;
@@ -535,7 +535,7 @@ form {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	max-width: 80%;
+	max-width: 90%;
 	margin: 0 auto;
   }
   
