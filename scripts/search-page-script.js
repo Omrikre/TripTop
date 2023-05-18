@@ -153,8 +153,8 @@ form.addEventListener('submit', (event) => {
   var diffDays = timeDiff / (1000 * 3600 * 24);
 
   // If the difference is greater than 5, display an error message
-   if (diffDays > 5) {
-    alert('Error: Maximum trip length is 5 days.');
+   if (diffDays >= 5) {
+    alert('Error: Maximum trip length is 5 days. current trip length: ' + diffDays);
     throw new Error('Error: Maximum trip length is 5 days.');
   }
 
