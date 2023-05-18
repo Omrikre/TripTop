@@ -46,7 +46,7 @@ body {
   
 /* Style the form container */
 form {
-	max-width: 750px;
+	max-width: 50%;
 	margin: auto;
 	padding: 20px;
 	background-color: rgba(255, 255, 255, 0.8);
@@ -54,6 +54,18 @@ form {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
+  /* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+	form {
+		max-width: 90%;
+		margin: auto;
+		padding: 10px;
+		border-radius: 10px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		/* Additional mobile-specific styles */
+	}
+}
+
   /* Style the select element */
   select {
 	font-size: 1.2rem;
@@ -478,6 +490,19 @@ form {
   
   tr:hover {
 	background-color: #f5f5f5;
+  }
+
+  /* Media query for mobile devices */
+@media (max-width: 768px) {
+	table {
+	  font-size: smaller; /* Adjust the font size for mobile */
+	}
+  
+	th,
+	td {
+	  padding: 0.2rem; /* Decrease the padding for mobile */
+	  border-bottom: 1px solid #dee2e6;
+	}
   }
   
   a {
