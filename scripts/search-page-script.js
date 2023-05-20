@@ -1,11 +1,11 @@
 // Get the current date
-const today = new Date().toISOString().split('T')[0];
+const tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
 // Set the minimum date for the start date input
-document.getElementById('startDate').setAttribute('min', today);
+document.getElementById('startDate').setAttribute('min', tomorrow);
 
 // Set the minimum date for the end date input to be the same as the start date input
-document.getElementById('endDate').setAttribute('min', today);
+document.getElementById('endDate').setAttribute('min', tomorrow);
 
 const startDateInput = document.getElementById('startDate');
   
