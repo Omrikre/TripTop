@@ -151,10 +151,10 @@ form.addEventListener('submit', (event) => {
   // Calculate the difference in days
   var timeDiff = endDate.getTime() - startDate.getTime();
   var diffDays = timeDiff / (1000 * 3600 * 24);
-  diffDays += 1;
 
   // If the difference is greater than 5, display an error message
    if (diffDays >= 5) {
+    diffDays += 1;
     alert('Error: Maximum trip length is 5 days. current trip length: ' + diffDays);
     throw new Error('Error: Maximum trip length is 5 days.');
   }
