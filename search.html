@@ -19,9 +19,9 @@
   <script>
     // Initiating the chosen plugin
     $(document).ready(function(){
-        $("#includeCategories").chosen();
-        $("#excludeCategories").chosen();
-    })
+    $("#includeCategories").chosen();
+    $("#excludeCategories").chosen();
+  });
   </script>    
 </head>
 <body>
@@ -54,7 +54,7 @@
     <input placeholder="(Recommended: 3)" type="number" id="NumberOfAttractionsPerDay" name="NumberOfAttractionsPerDay" min="1" max="5" required>
 
     <label for="includeCategories">Include Categories: (Optional)</label>
-    <select style="border: 1px;" type="text" id="includeCategories" multiple name="includeCategories">
+    <select type = "text" style="border: 1px;" type="text" id="includeCategories" multiple name="includeCategories">
       <option value="outdoor-activities">Outdoor Activities</option>
       <option value="sports">Sports</option>
       <option value="museums">Museums</option>
