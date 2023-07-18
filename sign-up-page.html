@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/android-chrome-512x512.png" type="image/x-icon">
-  <title>Login | TripTop</title>
+  <title>Sign up | TripTop</title>
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <!-- CDN of jQuery --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
@@ -34,19 +34,18 @@
 
   </div>
 
-<form id="login-form" style="text-align: center; margin-top:60px;max-width: 60%;">
-  <h2>Login to use the TripTop planner</h2>
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required>
-  <br><br>
-  <label for="Password">Password</label>
-  <input type="password" id="password" name="password" required>
-  <br>
-  <button style="margin-top: 10px;" type="submit">Login</button>
-  <p id="error-message" style="display: none; color: red;">Invalid email or password.</p>
-  <p>Don't have an account yet? <a href="sign-up-page.html">Sign up here</a></p>
-  <p>&copy; 2023 TripTop team. All rights reserved.</p>
-</form>
+  <form id="signup-form" style="text-align: center; margin-top: 60px; max-width: 60%;">
+    <h2>Create a TripTop account</h2>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <button style="margin-top: 10px;" type="submit">Sign Up</button>
+    <br>
+    <p>&copy; 2023 TripTop team. All rights reserved.</p>
+  </form>
 
   <br><br><br><br>
   <footer>
@@ -83,8 +82,6 @@
     
   </body>
   </html>
-  
-
-  <script src="scripts\login-script.js"></script>
+  <script src="scripts\sign-up-script.js"></script>
 </body>
 </html>
