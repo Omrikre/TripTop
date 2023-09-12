@@ -1,6 +1,3 @@
-if (!sessionStorage.getItem('loggedIn')) {
-  window.location.href = "login-page.html";
-}
 // Get the current date
 const tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
